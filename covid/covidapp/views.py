@@ -41,4 +41,4 @@ def helloworldview(request):
 
     # Default performance
     context = {"country_list": country_list}
-    return render(request, "helloworld.html", context)
+    return render(request, "webview.html", context)
