@@ -13,7 +13,7 @@ headers = {
 response = requests.request("GET", url, headers=headers).json()
 
 # Create your views here.
-def helloworldview(request):
+def webview(request):
     num_results = int(response["results"])
     country_list = []
 
@@ -37,7 +37,7 @@ def helloworldview(request):
 
         context = {"selectedCountry": selected_country, "country_list": country_list, "new": new, "active": active, "critical": critical, 
                     "recovered": recovered, "deaths": deaths, "total": total}
-        return render(request, "helloworld.html", context)
+        return render(request, "webview.html", context)
 
     # Default performance
     context = {"country_list": country_list}
