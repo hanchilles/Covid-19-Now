@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: black">
+        <h1 style="color: white; text-align: center; margin-top: 40px"><span style="color: red">COVID-19</span> WORLD DATA</h1>
+
+        <form method="post" class="d-flex justify-content-center align-items-center" action="">
+            {% csrf_token %}
+        
+            <select class="form-control" style="width: 200px" name="selectedCountry">
+                {% for country in country_list %}
+                <option>{{country}}</option>
+                {% endfor %}
+            </select>
+        
+            <input type="submit" class="btn btn-danger" name="" style="margin-left: 15px">
+        </form>
+
+        <h1 style="margin-top: 50px; color: white; text-align: center; font-size: 60px;">{{selectedCountry}}</h1>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: white;">
+                <h1 style="text-align: center">{{total}}</h1>
+                <p style="text-align: center;">Total Cases</p>
+            </div>
+           
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: #00ff00">
+                <h1 style="text-align: center">{{new}}</h1>
+                <p style="text-align: center;">New Cases</p>
+            </div>
+            
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: yellow">
+                <h1 style="text-align: center">{{active}}</h1>
+                <p style="text-align: center;">Active Cases</p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: #00ffff">
+                <h1 style="text-align: center">{{recovered}}</h1>
+                <p style="text-align: center;">Recovered</p>
+            </div>
+            
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: orange">
+                <h1 style="text-align: center">{{critical}}</h1>
+                <p style="text-align: center;">Critical</p>
+            </div>
+            
+            <div class="container" style="height: 100px; width: 200px; margin-top: 40px; color: black; border-radius: 10px; padding: 10px; background-color: red">
+                <h1 style="text-align: center">{{deaths}}</h1>
+                <p style="text-align: center;">Deaths</p>
+            </div>
+        </div>
+    </body>
+</html>
