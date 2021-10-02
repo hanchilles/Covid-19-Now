@@ -1,4 +1,4 @@
-# Covid-10 World Data
+# Covid-19 Now - Website to Fetch Covid-19 World Data 
 
 ### Status: Finished
 ### README demo: Updating
